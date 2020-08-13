@@ -1,0 +1,6 @@
+#PBS -o pbs_out -e pbs_out -l ncpus=8
+
+cd script
+make clean
+make -j8
+

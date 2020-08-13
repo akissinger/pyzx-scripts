@@ -50,8 +50,9 @@ gs = zx.sparsify.pivot_anneal(g, iters=200, score=twoq_score, logger=log)
 cs = zx.extract_circuit(gs)
 cs = post_process(cs)
 
-stats.info("%s%s%s%s" % (
+stats.info("%s%s%s%s%s" % (
   fname.ljust(30),
+  str(c.twoqubitcount()).rjust(7),
   str(ct.twoqubitcount()).rjust(7),
   str(ce.twoqubitcount()).rjust(7),
   str(cs.twoqubitcount()).rjust(7)))

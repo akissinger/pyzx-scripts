@@ -41,7 +41,7 @@ run: out/stats $(logs)
 
 out/stats:
 	mkdir -p out
-	@echo "Circuit                            TR     FR     SR" > out/stats
+	@echo "Circuit                             O     TR     FR     SR" > out/stats
 
 $(logs) : out/%.log: bench/%
 	python3 opt_circ.py $^

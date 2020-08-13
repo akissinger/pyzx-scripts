@@ -46,8 +46,8 @@ g.normalize()
 ce = zx.extract_circuit(g.copy())
 ce = post_process(ce)
 
-zx.sparsify.pivot_anneal(g, score=twoq_score, logger=log)
-cs = zx.extract_circuit(g.copy())
+gs = zx.sparsify.pivot_anneal(g, iters=200, score=twoq_score, logger=log)
+cs = zx.extract_circuit(gs)
 cs = post_process(cs)
 
 stats.info("%s%s%s%s" % (

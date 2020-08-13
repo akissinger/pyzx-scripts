@@ -37,9 +37,10 @@ circuits = \
 
 logs = $(patsubst bench/%,out/%.log,$(circuits))
 
-benchmarks: out/stats $(logs)
+run: out/stats $(logs)
 
 out/stats:
+	mkdir -p out
 	@echo "Circuit                            TR     FR     SR" > out/stats
 
 $(logs) : out/%.log: bench/%
@@ -48,7 +49,8 @@ $(logs) : out/%.log: bench/%
 clean:
 	rm out/*
 
-run:
+pbs:
+	mkdir -p pbs_out
 	qsub opt_job.pbs
 
 

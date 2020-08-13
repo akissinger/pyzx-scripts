@@ -10,5 +10,6 @@ This code is designed to run "next door" to the latest git version of PyZX in yo
     git clone https://github.com/Quantomatic/pyzx.git
     git clone https://github.com/akissinger/pyzx-scripts.git
     cd pyzx-scripts
-    make run
+    make -j8         # to run on 8 cores
+    make pbs         # to run with PBS (also on 8 cores)
 

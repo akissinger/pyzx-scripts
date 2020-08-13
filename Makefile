@@ -45,3 +45,7 @@ $(logs) : out/%.log: bench/%
 clean:
 	rm out/*
 
+run:
+	qsub opt_job.pbs
+
+
